@@ -110,16 +110,18 @@ def chatbot():
     while True:
         inp = input(f"{name}: ")
         if inp.lower() == 'quit':
+            print("Bye!! Look forward to seeing you again.")
             break
-        result = model.predict_classes(bag_of_input(inp, words).reshape(1, -1))
-
-        tag = tags[result[0]]
-
-        for tag_search in data['intents']:
-            if tag_search['tag'] == tag:
-                response = tag_search['response']
-                break
-        print(random.choice(response))
-
+        result = model.predict(bag_of_input(inp, words).reshape(1, -1))
+        result_idx = np.argmax(result)
+        tag = tags[result_idx]
+        if result[0][result_idx] > 0.8:
+            for tag_search in data['intents']:
+                if tag_search['tag'] == tag:
+                    response = tag_search['response']
+                    break
+            print(random.choice(response))
+        else:
+            print("I'm not sure what you say. Plz ask clearly again or ask another question!")
 
 chatbot()
