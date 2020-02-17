@@ -1,0 +1,26 @@
+{"intents": [
+    {"tag": "greeting",
+     "patterns": ["Hi", "How are you", "Is anybody there", "Hello", "Hey", "What's up"],
+     "response": ["Hello", "I'm fine", "How are you", "Hi! may I help you"],
+     "context_set": ""
+    },
+
+    {"tag": "goodbye",
+     "patterns": ["See ya", "Bye", "See you later", "Have a nice day", "See you", "See you soon"],
+     "response": ["See ya", "Bye", "See you later", "Have a nice day", "Goodbye!", "Happy to meet you"],
+     "context_set": ""
+    },
+
+    {"tag": "name",
+     "patterns": ["Wht's your name", "What should I call you"],
+     "response": ["Ken", "I am a Bot", "I am Ken", "Ken, a master student"],
+     "context_set": ""
+    },
+
+    {"tag": "asking",
+     "patterns": ["What can I ask", "I need to talk", "Is there any solution about", "Where is the destination", "How can I fix it"],
+     "response": ["It is very difficult to answer it", "Speak", "I think I could google it", "OMG, I'm not sure"],
+     "context_set": ""
+    }
+    ]
+}
